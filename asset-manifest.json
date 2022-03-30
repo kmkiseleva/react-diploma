@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-diploma/static/css/main.0b571e33.chunk.css",
+    "main.js": "/react-diploma/static/js/main.b5b716b8.chunk.js",
+    "main.js.map": "/react-diploma/static/js/main.b5b716b8.chunk.js.map",
+    "runtime-main.js": "/react-diploma/static/js/runtime-main.2b05f02a.js",
+    "runtime-main.js.map": "/react-diploma/static/js/runtime-main.2b05f02a.js.map",
+    "static/js/2.bfd34341.chunk.js": "/react-diploma/static/js/2.bfd34341.chunk.js",
+    "static/js/2.bfd34341.chunk.js.map": "/react-diploma/static/js/2.bfd34341.chunk.js.map",
+    "index.html": "/react-diploma/index.html",
+    "static/css/main.0b571e33.chunk.css.map": "/react-diploma/static/css/main.0b571e33.chunk.css.map",
+    "static/js/2.bfd34341.chunk.js.LICENSE.txt": "/react-diploma/static/js/2.bfd34341.chunk.js.LICENSE.txt",
+    "static/media/banner.5fd2c60d.jpg": "/react-diploma/static/media/banner.5fd2c60d.jpg",
+    "static/media/index.css": "/react-diploma/static/media/footer-sprite.b3d5697a.png",
+    "static/media/no-image-available.d09e5038.png": "/react-diploma/static/media/no-image-available.d09e5038.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2b05f02a.js",
+    "static/js/2.bfd34341.chunk.js",
+    "static/css/main.0b571e33.chunk.css",
+    "static/js/main.b5b716b8.chunk.js"
+  ]
+}
