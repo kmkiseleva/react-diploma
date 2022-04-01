@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { serverURL } from "../App";
 
 const initialState = {
   items: [],
@@ -9,7 +10,7 @@ const initialState = {
 export const fetchTopSales = () => async (dispatch, getState) => {
   dispatch(fetchStart());
   try {
-    const response = await fetch("http://localhost:7070/api/top-sales");
+    const response = await fetch(`${serverURL}/api/top-sales`);
     if (!response.ok) {
       throw new Error(response.statusText);
     }

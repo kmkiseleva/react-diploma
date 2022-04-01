@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { updateCart } from "../store/cartReducer";
+import { serverURL } from "../App";
 
 const initialState = {
   owner: { phone: "", address: "" },
@@ -22,7 +23,7 @@ export const fetchOrder = (owner, itemsData) => async (dispatch, getState) => {
   const orderObj = { owner, items };
 
   try {
-    const response = await fetch("http://localhost:7070/api/order", {
+    const response = await fetch(`${serverURL}/api/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

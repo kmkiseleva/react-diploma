@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { serverURL } from "../App";
 
 const initialState = {
   item: [],
@@ -12,7 +13,7 @@ export const fetchFullCard = (id) => async (dispatch, getState) => {
   dispatch(fetchStart());
 
   try {
-    const response = await fetch(`http://localhost:7070/api/items/${id}`);
+    const response = await fetch(`${serverURL}/api/items/${id}`);
     const json = await response.json();
     dispatch(put(json));
     dispatch(fetchSuccess());

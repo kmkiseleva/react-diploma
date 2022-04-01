@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { serverURL } from "../App";
 
 const initialState = {
   items: [],
@@ -13,7 +14,7 @@ const initialState = {
 export const fetchCatalog = (id, inputValue) => async (dispatch, getState) => {
   dispatch(fetchStart());
 
-  let baseURL = "http://localhost:7070/api/items?";
+  let baseURL = `${serverURL}/api/items?`;
   let url;
   if (id !== 11) {
     url = `${baseURL}categoryId=${id}`;
@@ -41,7 +42,7 @@ export const fetchCatalog = (id, inputValue) => async (dispatch, getState) => {
 export const fetchLoadMoreItems = (id, inputValue) => async (dispatch) => {
   dispatch(fetchMoreStart());
 
-  let baseURL = "http://localhost:7070/api/items?";
+  let baseURL = `${serverURL}/api/items?`;
   let url;
   if (id !== 11) {
     url = `${baseURL}categoryId=${id}&offset=6`;

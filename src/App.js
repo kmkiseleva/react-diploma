@@ -13,6 +13,7 @@ import MainContainer from "./components/MainContainer";
 import Search from "./components/Search";
 import Footer from "./components/Footer/Footer";
 
+export const serverURL = "https://ra-diploma-back-heroku.herokuapp.com";
 
 function App() {
   return (

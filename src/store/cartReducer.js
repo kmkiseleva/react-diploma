@@ -11,6 +11,7 @@ const initialState = {
 // добавить товар в корзину и хранилище
 export const addToCart = (item) => async (dispatch, getState) => {
   let isInCart = false;
+
   if (localStorage.length === 0) {
     localStorage.setItem("cart", JSON.stringify([item]));
   } else {
