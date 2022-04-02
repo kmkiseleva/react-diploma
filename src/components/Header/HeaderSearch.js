@@ -1,6 +1,7 @@
-import { useHistory } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
-import { changeSearchField } from "../../store/fetchSearch";
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeSearchField } from '../../store/fetchSearch';
 
 export default function HeaderSearch() {
   const dispatch = useDispatch();
@@ -13,17 +14,15 @@ export default function HeaderSearch() {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    if (searchInput !== "") {
-      history.push("/catalog");
-    }    
+    if (searchInput !== '') {
+      history.push('/catalog');
+    }
   };
 
   return (
     <form
       data-id="search-form"
-      className={`header-controls-search-form form-inline ${
-        hidden && "invisible"
-      }`}
+      className={`header-controls-search-form form-inline ${hidden && 'invisible'}`}
       onSubmit={onSubmitHandler}
     >
       <input

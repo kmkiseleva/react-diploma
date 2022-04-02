@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { serverURL } from "../App";
+import { createSlice } from '@reduxjs/toolkit';
+import { serverURL } from '../App';
 
 const initialState = {
   item: [],
   loading: false,
   error: null,
-  size: "",
+  size: '',
   amount: 1,
 };
 
@@ -23,7 +23,7 @@ export const fetchFullCard = (id) => async (dispatch, getState) => {
 };
 
 const fullCard = createSlice({
-  name: "fullCard",
+  name: 'fullCard',
   initialState,
   reducers: {
     put(state, action) {
@@ -55,13 +55,6 @@ const fullCard = createSlice({
   },
 });
 
-export const {
-  put,
-  fetchStart,
-  fetchError,
-  fetchSuccess,
-  chooseSize,
-  amountInc,
-  amountDec,
-} = fullCard.actions;
+export const { put, fetchStart, fetchError, fetchSuccess, chooseSize, amountInc, amountDec } =
+  fullCard.actions;
 export default fullCard.reducer;

@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { serverURL } from "../App";
+import { createSlice } from '@reduxjs/toolkit';
+import { serverURL } from '../App';
 
 const initialState = {
   items: [],
@@ -14,14 +14,14 @@ const initialState = {
 export const fetchCatalog = (id, inputValue) => async (dispatch, getState) => {
   dispatch(fetchStart());
 
-  let baseURL = `${serverURL}/api/items?`;
+  const baseURL = `${serverURL}/api/items?`;
   let url;
   if (id !== 11) {
     url = `${baseURL}categoryId=${id}`;
   } else {
     url = baseURL;
   }
-  if (inputValue.trim() !== "") {
+  if (inputValue.trim() !== '') {
     url = `${baseURL}q=${inputValue}`;
   }
 
@@ -42,14 +42,14 @@ export const fetchCatalog = (id, inputValue) => async (dispatch, getState) => {
 export const fetchLoadMoreItems = (id, inputValue) => async (dispatch) => {
   dispatch(fetchMoreStart());
 
-  let baseURL = `${serverURL}/api/items?`;
+  const baseURL = `${serverURL}/api/items?`;
   let url;
   if (id !== 11) {
     url = `${baseURL}categoryId=${id}&offset=6`;
   } else {
     url = `${baseURL}offset=6`;
   }
-  if (inputValue.trim() !== "") {
+  if (inputValue.trim() !== '') {
     url = `${baseURL}q=${inputValue}`;
   }
 
@@ -65,7 +65,7 @@ export const fetchLoadMoreItems = (id, inputValue) => async (dispatch) => {
 };
 
 const catalog = createSlice({
-  name: "catalog",
+  name: 'catalog',
   initialState,
   reducers: {
     // загрузка каталога

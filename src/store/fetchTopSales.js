@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { serverURL } from "../App";
+import { createSlice } from '@reduxjs/toolkit';
+import { serverURL } from '../App';
 
 const initialState = {
   items: [],
@@ -23,7 +23,7 @@ export const fetchTopSales = () => async (dispatch, getState) => {
 };
 
 const topSales = createSlice({
-  name: "topSales",
+  name: 'topSales',
   initialState,
   reducers: {
     put(state, action) {

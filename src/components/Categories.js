@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCategories, switchCategory } from "../store/fetchCategories";
+import { React, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCategories, switchCategory } from '../store/fetchCategories';
 
 export default function Categories() {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export default function Categories() {
       {categories.map((ctg) => (
         <li key={ctg.id} className="nav-item">
           <a
-            className={ctg.id === category ? "nav-link active" : "nav-link"}
+            className={ctg.id === category ? 'nav-link active' : 'nav-link'}
             href="/"
             onClick={(e) => onSwitchCategoryHandler(e, ctg.id)}
           >

@@ -1,6 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { deleteFromCart } from "../store/cartReducer";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { deleteFromCart } from '../store/cartReducer';
 import Order from '../components/Order';
 
 export default function Cart() {
@@ -66,11 +67,11 @@ export default function Cart() {
         <div
           className="text-center"
           style={{
-            marginTop: "10px",
-            marginBottom: "10px",
-            color: "green",
-            fontWeight: "bold",
-            fontSize: "20px",
+            marginTop: '10px',
+            marginBottom: '10px',
+            color: 'green',
+            fontWeight: 'bold',
+            fontSize: '20px',
           }}
         >
           Заказ отправлен успешно!

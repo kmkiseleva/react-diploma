@@ -1,31 +1,22 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
-import {
-  fetchFullCard,
-  chooseSize,
-  amountInc,
-  amountDec,
-} from "../store/fetchFullCard";
-import { addToCart } from "../store/cartReducer";
-import Preloader from "../components/Preloader";
-import Error from "../components/Error";
-import noImage from "../img/no-image-available.png";
+import { React, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { fetchFullCard, chooseSize, amountInc, amountDec } from '../store/fetchFullCard';
+import { addToCart } from '../store/cartReducer';
+import Preloader from '../components/Preloader';
+import Error from '../components/Error';
+import noImage from '../img/no-image-available.png';
 
 export default function FullCard({ match }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const { item, loading, error, size, amount } = useSelector(
-    (state) => state.fullCard
-  );
+  const { item, loading, error, size, amount } = useSelector((state) => state.fullCard);
 
   // проверка доступных размеров
   let availableSizes;
   if (item.sizes) {
-    availableSizes = item.sizes
-      .filter((size) => size.avalible)
-      .map((item) => item.size);
+    availableSizes = item.sizes.filter((size) => size.avalible).map((item) => item.size);
   }
 
   useEffect(() => {
@@ -66,9 +57,10 @@ export default function FullCard({ match }) {
       price: item.price,
     };
     dispatch(addToCart(itemObj));
-    history.push("/cart");
+    history.push('/cart');
   };
 
+  /* eslint-disable jsx-a11y/no-static-element-interactions */
   return (
     <section className="catalog-item">
       <h2 className="text-center">{item.title}</h2>
@@ -117,10 +109,8 @@ export default function FullCard({ match }) {
                 {availableSizes.map((data) => (
                   <span
                     key={item.id}
-                    style={{ cursor: "pointer" }}
-                    className={`catalog-item-size ${
-                      size === data && "selected"
-                    }`}
+                    style={{ cursor: 'pointer' }}
+                    className={`catalog-item-size ${size === data && 'selected'}`}
                     onClick={() => sizeHandler(data)}
                   >
                     {data}
@@ -128,30 +118,21 @@ export default function FullCard({ match }) {
                 ))}
               </p>
               <p>
-                Количество:{" "}
+                Количество:{' '}
                 <span className="btn-group btn-group-sm pl-2">
-                  <button
-                    className="btn btn-secondary"
-                    onClick={decAmountHandler}
-                  >
+                  <button className="btn btn-secondary" onClick={decAmountHandler}>
                     -
                   </button>
                   <span className="btn btn-outline-primary">{amount}</span>
-                  <button
-                    className="btn btn-secondary"
-                    onClick={incAmountHandler}
-                  >
+                  <button className="btn btn-secondary" onClick={incAmountHandler}>
                     +
                   </button>
                 </span>
               </p>
             </div>
           )}
-          {size !== "" && (
-            <button
-              className="btn btn-danger btn-block btn-lg"
-              onClick={addToCartHandler}
-            >
+          {size !== '' && (
+            <button className="btn btn-danger btn-block btn-lg" onClick={addToCartHandler}>
               В корзину
             </button>
           )}

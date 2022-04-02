@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { updateCart } from "../store/cartReducer";
-import { serverURL } from "../App";
+import { createSlice } from '@reduxjs/toolkit';
+import { updateCart } from './cartReducer';
+import { serverURL } from '../App';
 
 const initialState = {
-  owner: { phone: "", address: "" },
+  owner: { phone: '', address: '' },
   loading: false,
   success: false,
   checked: false,
@@ -24,9 +24,9 @@ export const fetchOrder = (owner, itemsData) => async (dispatch, getState) => {
 
   try {
     const response = await fetch(`${serverURL}/api/order`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(orderObj),
     });
@@ -44,7 +44,7 @@ export const fetchOrder = (owner, itemsData) => async (dispatch, getState) => {
 };
 
 const orderState = createSlice({
-  name: "orderState",
+  name: 'orderState',
   initialState,
   reducers: {
     fetchStart(state, action) {
@@ -68,11 +68,6 @@ const orderState = createSlice({
   },
 });
 
-export const {
-  fetchStart,
-  fetchSuccess,
-  fetchError,
-  changeInputField,
-  changeCheckbox,
-} = orderState.actions;
+export const { fetchStart, fetchSuccess, fetchError, changeInputField, changeCheckbox } =
+  orderState.actions;
 export default orderState.reducer;

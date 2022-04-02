@@ -1,33 +1,27 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchOrder,
-  changeInputField,
-  changeCheckbox,
-} from "../store/fetchOrder";
-import Preloader from "./Preloader";
-import Error from "./Error";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchOrder, changeInputField, changeCheckbox } from '../store/fetchOrder';
+import Preloader from './Preloader';
+import Error from './Error';
 
 export default function Order() {
   const dispatch = useDispatch();
 
   // состояние корзины и формы заказа
   const { items } = useSelector((state) => state.cartState);
-  const { owner, loading, error, checked } = useSelector(
-    (state) => state.orderState
-  );
+  const { owner, loading, error, checked } = useSelector((state) => state.orderState);
 
   // проверка валидности инпутов формы
   const onValidateFormHandler = () => {
     if (
-      owner.phone.trim() !== "" &&
+      owner.phone.trim() !== '' &&
       Number(owner.phone) &&
-      owner.address.trim() !== "" &&
+      owner.address.trim() !== '' &&
       checked
     ) {
       return false;
-    } else {
-      return true;
     }
+    return true;
   };
 
   const onSubmitHandler = (e) => {
@@ -49,7 +43,7 @@ export default function Order() {
   return (
     <section className="order">
       <h2 className="text-center">Оформить заказ</h2>
-      <div className="card" style={{ maxWidth: "30rem", margin: "0 auto" }}>
+      <div className="card" style={{ maxWidth: '30rem', margin: '0 auto' }}>
         <form className="card-body" onSubmit={onSubmitHandler}>
           <div className="form-group">
             <label htmlFor="phone">Телефон</label>

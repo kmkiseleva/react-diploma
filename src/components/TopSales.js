@@ -1,10 +1,10 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchTopSales } from "../store/fetchTopSales";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTopSales } from '../store/fetchTopSales';
 
-import Card from "./Card";
-import Preloader from "./Preloader";
-import Error from "./Error";
+import Card from './Card';
+import Preloader from './Preloader';
+import Error from './Error';
 
 export default function TopSales() {
   const dispatch = useDispatch();
@@ -22,8 +22,7 @@ export default function TopSales() {
       <div className="row">
         {loading && <Preloader />}
         {error && <Error />}
-        {items.length !== 0 &&
-          items.map((item) => <Card key={item.id} item={item} />)}
+        {items.length !== 0 && items.map((item) => <Card key={item.id} item={item} />)}
       </div>
     </section>
   );

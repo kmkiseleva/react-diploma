@@ -1,11 +1,11 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCatalog } from "../store/fetchCatalog";
-import Preloader from "../components/Preloader";
-import Error from "../components/Error";
-import Categories from "../components/Categories";
-import Card from "../components/Card";
-import LoadMoreBtn from "../components/LoadMoreBtn";
+import { React, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCatalog } from '../store/fetchCatalog';
+import Preloader from '../components/Preloader';
+import Error from '../components/Error';
+import Categories from '../components/Categories';
+import Card from '../components/Card';
+import LoadMoreBtn from '../components/LoadMoreBtn';
 
 export default function Catalog({ children }) {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export default function Catalog({ children }) {
   return (
     <section className="catalog">
       <h2 className="text-center">Каталог</h2>
-      {children ? children : null}
+      {children || null}
       {loading ? <Preloader /> : <Categories />}
       {error && <Error />}
       {!loading && !error && (
@@ -32,13 +32,12 @@ export default function Catalog({ children }) {
           </div>
           {items.length === 0 && (
             <div className="text-center">
-              По вашему запросу ничего не найдено.
-              Ошибка соединения.
+              По вашему запросу ничего не найдено. Ошибка соединения.
             </div>
           )}
         </>
       )}
-       {items.length !== 0 && <LoadMoreBtn />}      
+      {items.length !== 0 && <LoadMoreBtn />}
     </section>
   );
 }

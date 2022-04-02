@@ -1,6 +1,7 @@
-import { useHistory } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
-import { changeSearchFieldVisibility } from "../../store/fetchSearch";
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeSearchFieldVisibility } from '../../store/fetchSearch';
 
 export default function HeaderWidget() {
   const history = useHistory();
@@ -16,26 +17,25 @@ export default function HeaderWidget() {
       dispatch(changeSearchFieldVisibility(!hidden));
     }
 
-    if (hidden === false && searchInput.trim() === "") {
+    if (hidden === false && searchInput.trim() === '') {
       dispatch(changeSearchFieldVisibility(!hidden));
     }
   };
 
+  /* eslint-disable jsx-a11y/no-static-element-interactions */
   return (
     <div className="header-controls-pics">
       <div
         data-id="search-expander"
         className="header-controls-pic header-controls-search"
         onClick={onHideHandler}
-      ></div>
+      />
       <div
         className="header-controls-pic header-controls-cart"
-        onClick={() => history.push("/cart")}
+        onClick={() => history.push('/cart')}
       >
-        {items.length !== 0 && (
-          <div className="header-controls-cart-full">{items.length}</div>
-        )}
-        <div className="header-controls-cart-menu"></div>
+        {items.length !== 0 && <div className="header-controls-cart-full">{items.length}</div>}
+        <div className="header-controls-cart-menu" />
       </div>
     </div>
   );

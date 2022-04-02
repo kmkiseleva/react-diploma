@@ -1,12 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import Preloader from "./Preloader";
-import { fetchLoadMoreItems } from "../store/fetchCatalog";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Preloader from './Preloader';
+import { fetchLoadMoreItems } from '../store/fetchCatalog';
 
 export default function LoadMoreBtn() {
   const dispatch = useDispatch();
-  const { hidden, disabled, loadingMore } = useSelector(
-    (state) => state.catalog
-  );
+  const { hidden, disabled, loadingMore } = useSelector((state) => state.catalog);
   const { category } = useSelector((state) => state.categories);
   const { searchInput } = useSelector((state) => state.searchField);
 
@@ -20,7 +19,7 @@ export default function LoadMoreBtn() {
       <div className="text-center">
         <button
           className="btn btn-outline-primary"
-          style={hidden ? { visibility: "hidden" } : { visibility: "visible" }}
+          style={hidden ? { visibility: 'hidden' } : { visibility: 'visible' }}
           onClick={onLoadMoreHandler}
           disabled={disabled}
         >

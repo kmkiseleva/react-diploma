@@ -1,5 +1,6 @@
-import Catalog from "./Catalog";
-import TopSales from "../components/TopSales";
+import React from 'react';
+import Catalog from './Catalog';
+import TopSales from '../components/TopSales';
 
 export default function Main() {
   return (

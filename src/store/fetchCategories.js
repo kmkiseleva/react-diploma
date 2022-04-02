@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { serverURL } from "../App";
+import { createSlice } from '@reduxjs/toolkit';
+import { serverURL } from '../App';
 
 const initialState = {
   categories: [],
@@ -24,11 +24,11 @@ export const fetchCategories = () => async (dispatch, getState) => {
 };
 
 const categories = createSlice({
-  name: "categories",
+  name: 'categories',
   initialState,
   reducers: {
     put(state, action) {
-      state.categories = [{ id: 11, title: "Все" }, ...action.payload];
+      state.categories = [{ id: 11, title: 'Все' }, ...action.payload];
     },
     fetchStart(state, action) {
       return { ...state, loading: true, error: null };
@@ -50,6 +50,5 @@ const categories = createSlice({
   },
 });
 
-export const { put, fetchStart, fetchError, fetchSuccess, switchCategory } =
-  categories.actions;
+export const { put, fetchStart, fetchError, fetchSuccess, switchCategory } = categories.actions;
 export default categories.reducer;

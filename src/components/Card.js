@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import noImage from "../img/no-image-available.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import noImage from '../img/no-image-available.png';
 
 export default function Card({ item }) {
   const onError = (e) => {
@@ -11,7 +12,7 @@ export default function Card({ item }) {
       <div className="card catalog-item-card">
         <img
           src={item.images[0]}
-          style={{ height: "250px", objectFit: "contain" }}
+          style={{ height: '250px', objectFit: 'contain' }}
           className="card-img-top img-fluid"
           alt={item.title}
           onError={onError}

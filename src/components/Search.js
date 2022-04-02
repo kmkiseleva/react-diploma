@@ -1,5 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import { changeSearchField } from "../store/fetchSearch";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeSearchField } from '../store/fetchSearch';
 
 function Search() {
   const { searchInput } = useSelector((state) => state.searchField);

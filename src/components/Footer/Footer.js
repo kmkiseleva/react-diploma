@@ -1,6 +1,7 @@
-import FooterNav from "./FooterNav";
-import FooterPay from "./FooterPay";
-import FooterContacts from "./FooterContacts";
+import React from 'react';
+import FooterNav from './FooterNav';
+import FooterPay from './FooterPay';
+import FooterContacts from './FooterContacts';
 
 export default function Footer() {
   return (

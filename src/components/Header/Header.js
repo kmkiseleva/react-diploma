@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
-import HeaderLogo from "./HeaderLogo";
-import HeaderSearch from "./HeaderSearch";
-import HeaderWidget from "./HeaderWidget";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import HeaderLogo from './HeaderLogo';
+import HeaderSearch from './HeaderSearch';
+import HeaderWidget from './HeaderWidget';
 
 export default function Header() {
   return (
@@ -13,39 +14,22 @@ export default function Header() {
             <div className="collapase navbar-collapse" id="navbarMain">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <NavLink
-                    exact
-                    to="/"
-                    className="nav-link"
-                    activeClassName="active"
-                  >
+                  <NavLink exact to="/" className="nav-link" activeClassName="active">
                     Главная
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink
-                    to="/catalog"
-                    className="nav-link"
-                    activeClassName="active"
-                  >
+                  <NavLink to="/catalog" className="nav-link" activeClassName="active">
                     Каталог
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink
-                    to="/about"
-                    className="nav-link"
-                    activeClassName="active"
-                  >
+                  <NavLink to="/about" className="nav-link" activeClassName="active">
                     О магазине
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink
-                    to="/contacts"
-                    className="nav-link"
-                    activeClassName="active"
-                  >
+                  <NavLink to="/contacts" className="nav-link" activeClassName="active">
                     Контакты
                   </NavLink>
                 </li>

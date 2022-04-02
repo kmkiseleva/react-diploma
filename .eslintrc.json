@@ -1,0 +1,57 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "env": {
+     "es6": true,
+     "browser": true,
+     "jest": true
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "class-methods-use-this": "off",
+    "no-param-reassign": "off",
+    "no-plusplus": "off",
+    "no-cond-assign": "off",
+    "no-underscore-dangle": "off",
+    "no-restricted-syntax": [
+      "error",
+      "LabeledStatement",
+      "WithStatement"
+    ],
+    "no-alert": "off",
+    "eqeqeq": "off",
+    "no-unused-expressions": ["error", { "allowTernary": true }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/button-has-type": "off",
+    "import/no-cycle": "off",
+    "no-shadow": "off",
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "react/prop-types": "off",
+    "import/no-unresolved": 0,
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": [
+      "error",
+      {
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }],
+    "jsx-a11y/label-has-for": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }]
+  }
+}

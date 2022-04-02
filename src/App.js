@@ -1,19 +1,20 @@
-import { Route, Switch } from "react-router-dom";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import Main from "./pages/Main";
-import Catalog from "./pages/Catalog";
-import FullCard from "./pages/FullCard";
-import About from "./pages/About";
-import Contacts from "./pages/Contacts";
-import Cart from "./pages/Cart";
-import Page404 from "./pages/Page404";
+import Main from './pages/Main';
+import Catalog from './pages/Catalog';
+import FullCard from './pages/FullCard';
+import About from './pages/About';
+import Contacts from './pages/Contacts';
+import Cart from './pages/Cart';
+import Page404 from './pages/Page404';
 
-import Header from "./components/Header/Header";
-import MainContainer from "./components/MainContainer";
-import Search from "./components/Search";
-import Footer from "./components/Footer/Footer";
+import Header from './components/Header/Header';
+import MainContainer from './components/MainContainer';
+import Search from './components/Search';
+import Footer from './components/Footer/Footer';
 
-export const serverURL = "https://ra-diploma-back-heroku.herokuapp.com";
+export const serverURL = 'https://ra-diploma-back-heroku.herokuapp.com';
 
 function App() {
   return (

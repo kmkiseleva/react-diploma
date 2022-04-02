@@ -1,4 +1,5 @@
-import Banner from "./Banner";
+import React from 'react';
+import Banner from './Banner';
 
 export default function MainContainer({ children }) {
   return (

@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  searchInput: "",
+  searchInput: '',
   hidden: true,
 };
 
 const searchField = createSlice({
-  name: "searchField",
+  name: 'searchField',
   initialState,
   reducers: {
     changeSearchField(state, action) {
@@ -18,6 +18,5 @@ const searchField = createSlice({
   },
 });
 
-export const { changeSearchField, changeSearchFieldVisibility } =
-  searchField.actions;
+export const { changeSearchField, changeSearchFieldVisibility } = searchField.actions;
 export default searchField.reducer;
